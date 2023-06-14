@@ -50,7 +50,6 @@ module.exports = function autopopulatePlugin(schema, options) {
       pathsToPopulate[i].options.options = pathsToPopulate[i].options.options || {};
 
       const newOptions = { _depth: depth + 1 };
-      if (options.maxDepth) newOptions.maxDepth = options.maxDepth;
       Object.assign(pathsToPopulate[i].options.options, newOptions);
 
       const optionsToUse = processOption.call(this,
